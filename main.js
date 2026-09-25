@@ -56,12 +56,14 @@ function addFormValidation() {
 
 	const fields = Array.from(form.querySelectorAll('input, textarea, select'))
 		.filter((field) => field.type !== 'submit' && field.type !== 'button' && field.type !== 'hidden');
+	const getFieldKey = (field) => field.name || field.id || (field.type === 'email' ? 'email' : '');
 
 	try {
 		const savedValues = JSON.parse(localStorage.getItem(savedFormValuesKey) || '{}');
 		fields.forEach((field) => {
-			if (field.name && savedValues[field.name] !== undefined && !field.value) {
-				field.value = savedValues[field.name];
+			const key = getFieldKey(field);
+			if (key && savedValues[key] !== undefined && !field.value) {
+				field.value = savedValues[key];
 			}
 		});
 	} catch (error) {
@@ -71,7 +73,8 @@ function addFormValidation() {
 	const saveFormValues = () => {
 		const values = {};
 		fields.forEach((field) => {
-			if (field.name) values[field.name] = field.value;
+			const key = getFieldKey(field);
+			if (key) values[key] = field.value;
 		});
 		try {
 			localStorage.setItem(savedFormValuesKey, JSON.stringify(values));
