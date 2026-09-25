@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Northstar Bakery - Contact Us!</title>
+    <link rel="stylesheet" href="css/styles.css"> 
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Contact Northstar Bakery</h1>
+        <p>If you have any questions, comments, or would like to place an order, please fill out the form below or reach out to us using the contact information provided.</p>
+<fieldset>
+        <form action="submit_contact_form.php" method="post">
+                <legend><strong>Contact Form</strong></legend>
+                 <label for="name">Name:</label>
+                 <input type="text" id="name" name="name" required><br><br>
+                 <label for="email">Email:</label>
+                 <input type="email" id="email" name="email" required><br><br>
+                 <label for="Pick up date">Pick up date:</label>
+                 <input type="date" id="subject" name="subject" required><br><br>
+                 <label for="Request Type">Request Type:</label><br>
+                 <select id="request_type" name="request_type" required>
+                <option value="">Select a request type</option>
+                <option value="general">General Inquiry</option>
+                <option value="order">Order Placement</option>
+                <option value="feedback">Feedback</option>
+            </select><br><br>
+         <label for="Notes">Item details/allergy notes, if applicable:</label><br>
+         <messages></messages></details></label><br>
+            <textarea id="message" name="message" rows="5" cols="40" required></textarea><br><br>
+            <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+
+        <h2>Where to Find Us</h2>
+        <p><strong>Visit us at our cozy storefront, 123 Northstar Street.</strong></p>
+        <p><strong>Open M-F 7am-1pm </strong></p>
+    </main>
+    <footer>
+        <p>&copy; 2026 Northstar Bakery. All rights reserved.</p>
+    </footer>
+</body>
+
+
+
